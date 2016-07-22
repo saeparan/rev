@@ -1,0 +1,18 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="hero-unit">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</header>
+
+<div class="container">
+	{{.articleItem.Title}}
+
+    <hr>
+
+    {{raw .articleItem.Content}}
+</div>
+{{template "footer.html" .}}

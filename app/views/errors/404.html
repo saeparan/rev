@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{.title}}</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+	<link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+	<script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	{{range .moreStyles}}
+	<link rel="stylesheet" type="text/css" href="/public/{{.}}">
+	{{end}} {{range .moreScripts}}
+	<script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+	{{end}}
+	
+	<style type="Text/css">
+		.error-template {padding: 40px 15px;text-align: center;}
+		.error-actions {margin-top:15px;margin-bottom:15px;}
+		.error-actions .btn { margin-right:10px; }    
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	
+	<div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+            	<h1>Oopssssssss</h1>
+            	{{with .Error}}
+                	<h3>{{.Title}}</h3>
+                {{end}}
+                <div class="error-details">
+					페이지 접속이 원활하지 않으니, 다음에 다시 시도해주세요.
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+</body>
+</html>

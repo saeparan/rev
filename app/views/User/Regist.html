@@ -1,0 +1,62 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="hero-unit">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="span6">
+            {{template "flash.html" .}}
+        </div>
+    </div>
+
+    <form class="form-horizontal" action="/user" method="POST">
+        <fieldset>
+            <div id="legend">
+                <legend class="">계정만들기</legend>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="email">이메일</label>
+                <div class="controls">
+                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="nickname">닉네임</label>
+                <div class="controls">
+                    <input type="text" id="nickname" name="nickname" placeholder="" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="password">암호</label>
+                <div class="controls">
+                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="password_confirm">암호 (확인)</label>
+                <div class="controls">
+                    <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+                    <p class="help-block">암호는 6자 이상 입력해주세요.</p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn">생성</button>
+                    <button class="btn btn-danger">취소</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+{{template "footer.html" .}}

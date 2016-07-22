@@ -1,0 +1,34 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<header class="hero-unit">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</header>
+
+<div class="container">
+	<table class="table">
+        <colgroup>
+            <col class="col-md-7">
+            <col class="col-md-2">
+            <col class="col-md-2">
+            <col class="col-md-1">
+        </colgroup>	
+		{{range .articles}}
+			<tr>
+				<td><a href="/board/view/{{.BoardID}}/{{.Id.Hex}}">{{.Title}}</a></td>
+				<td>{{.NickName}}</td>
+				<td>{{.RegDateString}}</td>
+				<td>{{.Hit}}</td>
+			</tr>
+		{{end}}
+	</table>
+	
+	<div class="text-right">
+		<a href="/board/write/{{.BoardID}}" class="btn btn-sm btn-primary">글쓰기</a>
+	</div>
+</div>
+
+{{template "footer.html" .}}
